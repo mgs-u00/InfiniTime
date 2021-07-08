@@ -43,6 +43,7 @@
 #include "drivers/Cst816s.h"
 #include "systemtask/SystemTask.h"
 
+//test
 #if NRF_LOG_ENABLED
   #include "logging/NrfLogger.h"
 Pinetime::Logging::NrfLogger logger;
