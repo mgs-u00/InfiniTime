@@ -28,6 +28,9 @@ jobs:
 
       #########################################################################################
       # Download and Cache Dependencies
+      - name: enable env variable
+        run: |
+          echo "true" >> $ACTIONS_ALLOW_UNSECURE_COMMANDS
 
       - name: Install cmake
         uses: lukka/get-cmake@v3.18.3
