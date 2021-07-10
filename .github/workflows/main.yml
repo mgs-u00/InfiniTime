@@ -35,7 +35,7 @@ jobs:
         id:   cache-toolchain
         uses: actions/cache@v2
         env:
-          cache-name: cache-toolchain-9-2020-q2
+          cache-name: cache-toolchain-10-2020-q4
         with:
           path: ${{ runner.temp }}/arm-none-eabi
           key:  ${{ runner.os }}-build-${{ env.cache-name }}
@@ -43,10 +43,10 @@ jobs:
 
       - name: Install Embedded Arm Toolchain arm-none-eabi-gcc
         if:   steps.cache-toolchain.outputs.cache-hit != 'true'  # Install toolchain if not found in cache
-        uses: fiam/arm-none-eabi-gcc@v1.0.2
+        uses: fiam/arm-none-eabi-gcc@v1.0.4
         with:
           # GNU Embedded Toolchain for Arm release name, in the V-YYYY-qZ format (e.g. "9-2019-q4")
-          release: 9-2020-q2
+          release: 10-2020-q4
           # Directory to unpack GCC to. Defaults to a temporary directory.
           directory: ${{ runner.temp }}/arm-none-eabi
 
@@ -168,3 +168,4 @@ jobs:
 
 # Embedded Arm Toolchain and nRF5 SDK will only be cached if the build succeeds.
 # So make sure that the first build always succeeds, e.g. comment out the "Make" step.
+
