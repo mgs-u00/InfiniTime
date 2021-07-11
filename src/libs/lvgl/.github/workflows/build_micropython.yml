@@ -18,9 +18,7 @@ jobs:
         sudo apt-get update -y -qq
         sudo apt-get install libsdl2-dev
     - name: Clone lv_micropython
-      run: |
-        git clone https://github.com/lvgl/lv_micropython.git .
-        git checkout master
+      run: git clone https://github.com/lvgl/lv_micropython.git .
     - name: Update submodules
       run: git submodule update --init --recursive
     - name: Checkout LVGL submodule
@@ -33,6 +31,11 @@ jobs:
     - name: Build mpy-cross
       run: make -j $(nproc) -C mpy-cross
     - name: Build the unix port
-      run: make -j $(nproc) -C ports/unix VARIANT=dev DEBUG=1
-    - name: Run tests      
-      run: lib/lv_bindings/tests/run.sh
+      run: make -j $(nproc) -C ports/unix
+    - name: Run advanced_demo
+      run: >
+        echo "import gc,utime;
+        utime.sleep(5);
+        gc.collect();
+        utime.sleep(5)" |
+        ports/unix/micropython -i lib/lv_bindings/examples/advanced_demo.py
