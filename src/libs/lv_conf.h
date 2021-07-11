@@ -417,7 +417,6 @@ typedef void* lv_indev_drv_user_data_t;            /*Type of user data in the in
                                LV_FONT_DECLARE(jetbrains_mono_extrabold_compressed) \
                                LV_FONT_DECLARE(jetbrains_mono_42) \
                                LV_FONT_DECLARE(jetbrains_mono_76) \
-                               LV_FONT_DECLARE(open_sans_light) \
                                LV_FONT_DECLARE(lv_font_sys_48)
 
 /* Enable it if you have fonts with a lot of characters.
@@ -592,7 +591,7 @@ typedef void* lv_obj_user_data_t;
 #endif
 
 /*Canvas (dependencies: lv_img)*/
-#define LV_USE_CANVAS   0
+#define LV_USE_CANVAS   1
 
 /*Check box (dependencies: lv_btn, lv_label)*/
 #define LV_USE_CHECKBOX       1
@@ -649,7 +648,7 @@ typedef void* lv_obj_user_data_t;
 #endif
 
 /*LED (dependencies: -)*/
-#define LV_USE_LED      0
+#define LV_USE_LED      1
 #if LV_USE_LED
 #define LV_LED_BRIGHT_MIN  120      /*Minimal brightness*/
 #define LV_LED_BRIGHT_MAX  255     /*Maximal brightness*/
