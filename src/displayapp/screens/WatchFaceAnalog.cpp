@@ -63,12 +63,12 @@ WatchFaceAnalog::WatchFaceAnalog(Pinetime::Applications::DisplayApp* app,
 
   lv_style_init(&dots_style);
   lv_style_set_radius(&dots_style, LV_STATE_DEFAULT, LV_RADIUS_CIRCLE);   //corner radius, not size
-  lv_style_set_bg_color(&dots_style, LV_STATE_DEFAULT, LV_COLOR_CYAN);
+  lv_style_set_bg_color(&dots_style, LV_STATE_DEFAULT, LV_COLOR_WHITE);
   lv_style_set_bg_opa(&dots_style, LV_STATE_DEFAULT, LV_OPA_100);
 
   lv_style_init(&bars_style);
   lv_style_set_line_width(&bars_style, LV_STATE_DEFAULT, 8);
-  lv_style_set_line_color(&bars_style, LV_STATE_DEFAULT, LV_COLOR_CYAN);
+  lv_style_set_line_color(&bars_style, LV_STATE_DEFAULT, LV_COLOR_WHITE);
   lv_style_set_line_rounded(&bars_style, LV_STATE_DEFAULT, true);
   lv_style_set_radius(&bars_style, LV_STATE_DEFAULT, 4);
 
@@ -130,7 +130,7 @@ WatchFaceAnalog::WatchFaceAnalog(Pinetime::Applications::DisplayApp* app,
   lv_obj_align(batteryIcon, NULL, LV_ALIGN_IN_BOTTOM_RIGHT, -8, -4);
 
   notificationIcon = lv_label_create(lv_scr_act(), NULL);
-  lv_obj_set_style_local_text_color(notificationIcon, LV_LABEL_PART_MAIN, LV_STATE_DEFAULT, LV_COLOR_CYAN);
+  lv_obj_set_style_local_text_color(notificationIcon, LV_LABEL_PART_MAIN, LV_STATE_DEFAULT, LV_COLOR_WHITE);
   lv_label_set_text(notificationIcon, NotificationIcon::GetIcon(false));
   lv_obj_align(notificationIcon, NULL, LV_ALIGN_IN_BOTTOM_LEFT, 8, -4);
 
@@ -180,7 +180,7 @@ WatchFaceAnalog::WatchFaceAnalog(Pinetime::Applications::DisplayApp* app,
 
   lv_style_init(&tri_style);
   lv_style_set_line_width(&tri_style, LV_STATE_DEFAULT, 2);
-  lv_style_set_line_color(&tri_style, LV_STATE_DEFAULT, LV_COLOR_CYAN);
+  lv_style_set_line_color(&tri_style, LV_STATE_DEFAULT, LV_COLOR_WHITE);
   lv_style_set_line_rounded(&tri_style, LV_STATE_DEFAULT, true);
 
   lv_obj_add_style(seconds_dot, LV_LED_PART_MAIN, &dots_style);
